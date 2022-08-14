@@ -1,0 +1,28 @@
+# -*-mode:toml-*- vim:ft=toml
+# -*-mode:go-template-*- vim:ft=toml
+{{- $name := promptStringOnce . "name" "Git full name" }}
+{{- $email := promptStringOnce . "email" "Git email address" }}
+{{- $gpgkey := promptStringOnce . "gpgkey" "GPG key" }}
+# ~/.config/chezmoi/chezmoi.toml
+
+encryption = "gpg"
+format = "json"
+color = "on"
+pager = "less"
+
+[data]
+  email = {{ $email | quote }}
+  name = {{ $name | quote }}
+  gpgkey = {{ $gpgkey | quote }}
+
+[diff]
+  exclude = ["scripts"]
+  pager = "diff-so-fancy"
+
+[gpg]
+  recipient = {{ $gpgkey | quote }}
+  suffix = ".asc"
+
+[status]
+  exclude = ["scripts"]
+
