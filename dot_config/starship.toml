@@ -1,0 +1,101 @@
+format = """
+$username\
+$git_branch\
+$git_status\
+$c\
+$elixir\
+$elm\
+$golang\
+$haskell\
+$java\
+$julia\
+$nodejs\
+$nim\
+$rust\
+$docker_context\
+$terraform\
+$time\
+$line_break\
+$directory\
+$character"""
+
+# Disable the blank line at the start of the prompt
+# add_newline = false
+
+# You can also replace your username with a neat symbol like  to save some space
+[username]
+show_always = true
+format = '[$user ]($style)'
+
+[directory]
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[c]
+symbol = " "
+style = "fg:#86BBD8"
+format = '[ $symbol ($version) ]($style)'
+
+[docker_context]
+symbol = " "
+style = "fg:#06969A"
+format = '[ $symbol $context ]($style) $path'
+
+[elixir]
+symbol = " "
+style = "fg:#86BBD8"
+format = '[ $symbol ($version) ]($style)'
+
+[elm]
+symbol = " "
+style = "fg:#86BBD8"
+format = '[ $symbol ($version) ]($style)'
+
+[git_branch]
+symbol = ""
+style = "fg:#FCA17D"
+format = '[$symbol $branch]($style)'
+
+[git_status]
+style = "fg:#FCA17D"
+format = '[$all_status$ahead_behind ]($style)'
+
+[golang]
+symbol = " "
+style = "fg:#86BBD8"
+format = '[$symbol ($version)]($style)'
+
+[haskell]
+symbol = " "
+style = "fg:#86BBD8"
+format = '[$symbol ($version)]($style)'
+
+[java]
+symbol = " "
+style = "fg:#86BBD8"
+format = '[$symbol ($version)]($style)'
+
+[julia]
+symbol = " "
+style = "fg:#86BBD8"
+format = '[$symbol ($version)]($style)'
+
+[nodejs]
+symbol = ""
+style = "fg:#86BBD8"
+format = '[$symbol ($version)]($style)'
+
+[nim]
+symbol = " "
+style = "fg:#86BBD8"
+format = '[$symbol ($version)]($style)'
+
+[rust]
+symbol = ""
+style = "fg:#86BBD8"
+format = '[$symbol ($version)]($style)'
+
+[time]
+disabled = false
+time_format = "%R" # Hour:Minute Format
